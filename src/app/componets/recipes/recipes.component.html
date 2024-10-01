@@ -1,0 +1,27 @@
+<h1>List of Meals</h1>
+<ul>
+    <div *ngFor="let meal of meals">
+
+        <div class="card" >
+            <div class="card-details">
+                <img src="{{meal.strMealThumb}}" alt="">
+                <p class="text-title">{{meal.strMeal}}</p>
+                <p class="text-body">{{meal.strCategory}}</p>
+            </div>
+            <label for="modal-toggle" class="card-button">Recipe</label>
+        </div>
+    
+        <!-- Hidden checkbox to control modal visibility -->
+        <input type="checkbox" id="modal-toggle" class="modal-toggle">
+    
+    
+        <!-- Modal -->
+        <div class="modal">
+            <div class="modal-content">
+                <label for="modal-toggle" class="close-btn">&times;</label>
+                <h2>Recipe</h2>
+                <p>{{ meal.strInstructions }}</p>
+            </div>
+        </div>
+    </div>
+</ul>
